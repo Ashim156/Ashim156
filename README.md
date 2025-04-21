@@ -3,7 +3,7 @@
 <h1 align="center">⚡ Ashim Nakarmi | The Power of Excellence 💥</h1>
 <p align="center">
   <!-- Aura Animation GIF -->
-  <img src="https://media.giphy.com/media/3ohhwECdKzRcLzHBs4/giphy.gif" alt="Aura of Greatness GIF" width="400"/>
+[  <img src="https://media.giphy.com/media/3ohhwECdKzRcLzHBs4/giphy.gif" alt="Aura of Greatness GIF" width="400"/>](https://media.giphy.com/media/26uf1ch7Gqf5hOFiY/giphy.gif)
 </p>
 
 ## 🌟 About Me
