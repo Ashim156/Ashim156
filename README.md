@@ -1,48 +1,62 @@
-<!-- GitHub Profile: CR7 Themed by Ashim Nakarmi -->
+<!-- GitHub Profile: The Aura of Greatness by Ashim Nakarmi -->
 
-<h1 align="center">💪 Ashim Nakarmi | CR7 Mode On 🐐</h1>
+<h1 align="center">⚡ Ashim Nakarmi | The Power of Excellence 💥</h1>
 <p align="center">
-  <img src="https://media.giphy.com/media/xUOxf4sF5fWAZ1cKek/giphy.gif" alt="CR7 GIF" width="350"/>
+  <img src="https://media.giphy.com/media/l4FGrHJ9gYcbCl3kE/giphy.gif" alt="Aura of Greatness GIF" width="400"/>
 </p>
 
-## 👑 About Me
-I'm a passionate developer, driven by the same passion and hard work that defines **Cristiano Ronaldo** on and off the field. 
+## 🌟 About Me
+I am driven by an unyielding quest for **excellence**. My journey is one of growth, learning, and creating with purpose. Just like the greatest minds and champions who leave a mark on history, I aim to leave an undeniable impact on the world of tech.
 
-- ⚽ Code like CR7 plays — always aiming for the top.
-- 🚀 Committing like his dedication to training.
-- 🎯 Always pushing for more, whether in football or development.
+- 🚀 **Purposeful Innovation**: Always striving for the impossible, breaking boundaries.
+- 💡 **Infinite Vision**: Never stop learning, never stop growing.
+- 🎯 **Mastering the Craft**: Code, design, and think like no one else.
 
-## 🏆 Skills & Tech Stack
-- **Frontend**: React, TailwindCSS, Next.js
-- **Backend**: Node.js, Express, Django
-- **Dev Tools**: Git, Docker, VS Code
-
-### 🏅 My Stats:
-- 🌍 **Location**: Nepal 🇳🇵
-- 📊 **GitHub Contributions**: Pushing commits every day
-- 🎯 **Goal**: Write code that impacts and changes lives
-
-> "Your love makes me strong. Your hate makes me unstoppable." — **Cristiano Ronaldo**
+> "Excellence is not an act, but a habit." — **Aristotle**
 
 ---
 
-## 🔥 Pinned Projects
+## 🔥 My Tech Aura
+As I move forward, I seek to leave a legacy of brilliance with the skills I acquire and the projects I create.
 
-### ⚽ CR7 Highlights App
-A React app showcasing Cristiano Ronaldo's iconic moments.
+### 💻 Core Skills & Tools:
+- **Frontend**: React, Vue.js, Next.js, TailwindCSS
+- **Backend**: Node.js, Express, Django, Flask
+- **DevOps**: Docker, Kubernetes, CI/CD, AWS
+- **Databases**: MongoDB, PostgreSQL, MySQL
+- **Tools**: Git, GitHub, VS Code, Postman
 
-### 🏆 Goal Scorer CLI
-A Python app that tracks Ronaldo’s goals in real-time.
+### 🏆 Stats:
+- **Location**: Nepal 🇳🇵
+- **Passion**: Transforming ideas into reality through code.
+- **Commitment**: Continuously pushing myself to evolve.
 
 ---
 
-## 🔗 Connect with Me
+## 🔥 Pinned Projects of Impact
+
+### 🚀 Quantum Innovator
+An innovative app that predicts trends in tech and provides actionable insights using machine learning.
+
+### 🌍 Global Unity
+A web app dedicated to connecting individuals from around the world, fostering collaboration through shared ideas and projects.
+
+### 🧠 Mindset Mastery
+A tool that generates daily affirmations and motivational quotes based on your personal growth journey.
+
+---
+
+## 💥 My Vision:
+- **Creativity**: Harnessing the boundless power of imagination and applying it to my projects.
+- **Impact**: Creating products that **change lives** and shape the future.
+- **Legacy**: Striving for something bigger than myself — to inspire others to push past their limits.
+
+---
+
+## 💬 Let's Connect and Create
+
 - [LinkedIn](https://www.linkedin.com/in/ashimnakarmi)
 - [Twitter](https://twitter.com/ashimnakarmi)
 - [Website](https://www.your-website.com)
 
----
-
-### 💥 Let's Score Together! ⚽
-
----
+> “The future belongs to those who believe in the beauty of their dreams.” — **Eleanor Roosevelt**
