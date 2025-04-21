@@ -113,14 +113,14 @@ A tool that generates daily affirmations and motivational quotes based on your p
 
 <div align="left">
 
-### Senior Software Engineer | TechFusion Inc.
-*Jan 2023 - Present*
+### Senior Software Engineer | Codesc Nepal
+*Jan 2025 - Present*
 - Architected and deployed scalable microservices using TypeScript and Node.js
 - Led team of 5 developers to deliver enterprise solutions on time and within budget
 - Implemented CI/CD pipelines that reduced deployment time by 60%
 
-### Full Stack Developer | InnovateTech
-*Mar 2021 - Dec 2022*
+### Full Stack Developer | Codesc Nepal
+*Mar 2023 - Dec 2024*
 - Developed responsive web applications using React and Next.js
 - Optimized database queries resulting in 40% performance improvement
 - Built RESTful APIs with Express.js and integrated with third-party services
@@ -139,11 +139,10 @@ A tool that generates daily affirmations and motivational quotes based on your p
   
 </div>
 
-- **Master of Science in Computer Science**
-  - Stanford University (2019-2021)
+
   
-- **Bachelor of Engineering in Computer Science**
-  - Tribhuvan University, Nepal (2015-2019)
+- **Bachelor in Computer Application**
+  - Nesfield International Collage , Nepal (2020-2025)
 
 ---
 
@@ -183,3 +182,4 @@ A tool that generates daily affirmations and motivational quotes based on your p
 [![Spotify](https://novatorem-ashimnakarmi.vercel.app/api/spotify)](https://open.spotify.com/user/ashimnakarmi)
   
 </div>
+
