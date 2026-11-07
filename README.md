@@ -61,9 +61,9 @@ There is a **Free Forever** plan, no credit card needed.
 
 ## Contributions
 
-<img src="assets/contributions.svg" alt="Animated 3D skyline of my contributions over the last year, one tower per day" width="100%">
+<img src="assets/galaxy.svg" alt="A rotating spiral galaxy of my contributions over the last year: one star per day, constellations for streaks, a supernova on my busiest day" width="100%">
 
-<sub>One tower per day, drawn from my public contribution calendar. Refresh it with <code>python tools/gen_contrib.py Ashim156 assets</code>.</sub>
+<sub>Every star is a day I shipped something. The newest burn at the core, a year ago drifts on the rim, streaks join into constellations and my busiest day went supernova. Refresh it with <code>python tools/gen_galaxy.py Ashim156 assets</code>.</sub>
 
 <img src="assets/divider.svg" alt="" width="100%">
 
