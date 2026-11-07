@@ -1,4 +1,3 @@
-# Usage: python tools/gen_assets.py assets   (regenerates every SVG in ./assets)
 """Generates the animated SVGs for the GitHub profile README. Pure SVG + CSS/SMIL: no JS, no external fonts."""
 import math, os, sys
 
@@ -77,7 +76,7 @@ text{{font-kerning:normal}}
 <path d="{wave(2400, 12, 400, 338, 1.2)}" fill="url(#w2)"/></g>
 <text class="name" x="68" y="140" font-family="{SERIF}" font-size="84" font-weight="700" fill="url(#name)">Ashim Nakarmi</text>
 <g class="sub">{''.join(role_svg)}</g>
-<text class="tag" x="70" y="290" font-family="{SANS}" font-size="20" fill="{MUTED}" letter-spacing=".4">Founder of Your Tech Mitra  ·  Maker of MekMitra  ·  Kathmandu, Nepal</text>
+<text class="tag" x="70" y="290" font-family="{SANS}" font-size="20" fill="{MUTED}" letter-spacing=".4">Founder of Your Tech Mitra  ·  Maker of MekMitra  ·  Lalitpur, Nepal</text>
 <rect x="68" y="168" width="64" height="4" rx="2" fill="{ACC}"><animate attributeName="width" values="0;64;220;64" keyTimes="0;.15;.5;1" dur="8s" repeatCount="indefinite"/></rect>
 </g>
 <rect x=".5" y=".5" width="1199" height="399" rx="18" fill="none" stroke="{ACC}" stroke-opacity=".25"/>
