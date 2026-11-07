@@ -304,27 +304,79 @@ kb.append("</g>")
 deco.append("".join(kb))
 
 # ---------------------------------------------------------------- furniture
-pal_person = lambda hair, skin, shirt, pants: {"H": hair, "S": skin, "T": shirt, "t": sh(shirt, .75), "P": pants}
-BODY = ["...HHHHHHHH...", "..HHHHHHHHHH..", "..HHHHHHHHHH..", "..HHHHHHHHHH..", "..SHHHHHHHHS..", "...HHHHHHHH...", "....SSSSSS....",
-        "..TTTTTTTTTT..", "...TTTTTTTT...", "...TTTTTTTT...", "...TTTTTTTT...", "...tTTTTTTt...", "..TTTTTTTTTT..", "..PPPPPPPPPP..", "..PPPPPPPPPP.."]
+pal_person = lambda hair, skin, shirt, pants: {"H": hair, "S": skin, "K": "#120706", "T": shirt, "t": sh(shirt, .75), "P": pants}
+SPR_R = [
+    "...HHHHHHH....",
+    "..HHHHHHHHH...",
+    "..HHHHHHHHSS..",
+    "..HHHHHHHSKS..",
+    "..HHHHHHHSSSS.",
+    "...HHHHHSSSS..",
+    ".....HSSSSS...",
+    "...TTTTTTTT...",
+    "..TTTTTTTTTT..",
+    "..TTTTTTTTTT..",
+    "..TTTTTTTTTT..",
+    "..tTTTTTTTTt..",
+    "..TTTTTTTTTT..",
+    "..PPPPPPPPPP..",
+    "..PPPPPPPPPPPP",
+]
 
 
-def person(cx, by, hair, skin, shirt, pants, ph):
+def _cells(x0, y0, x1, y1):
+    n = max(1, int(max(abs(x1 - x0), abs(y1 - y0)) // 4))
+    out = []
+    for k in range(n + 1):
+        gx = round((x0 + (x1 - x0) * k / n) / 4) * 4
+        gy = round((y0 + (y1 - y0) * k / n) / 4) * 4
+        if (gx, gy) not in out:
+            out.append((gx, gy))
+    return out
+
+
+def _arm(sx, sy, hx, hy, sleeve, skin, ph):
+    ex, ey = sx + (hx - sx) * .35, sy + 14
+    cells = _cells(sx, sy, ex, ey) + _cells(ex, ey, hx, hy)
+    seen, uniq = set(), []
+    for c in cells:
+        if c not in seen:
+            seen.add(c)
+            uniq.append(c)
+    arm = "".join(rect(x, y, 5, 5, sleeve) for x, y in uniq[:-2])
+    hand = "".join(rect(x, y, 5, 5, skin) for x, y in uniq[-2:])
+    return arm + '<g>%s%s</g>' % (step_anim("transform", ["0 0", "0 -3", "0 0", "0 0"], .6, "-%ss" % ph, kind="animateTransform", typ="translate"), hand)
+
+
+def person(cx, by, hair, skin, shirt, pants, ph, face="R", hand=(0, 0)):
     p = 4
+    rows = SPR_R if face == "R" else [r[::-1] for r in SPR_R]
     x0, y0 = cx - 28, by - 60
     pal = pal_person(hair, skin, shirt, pants)
-    body = sprite(BODY, pal, x0, y0, p)
-    arms = ""
-    for side, ax in (("L", x0 + 1 * p), ("R", x0 + 11 * p)):
-        d = ph if side == "L" else ph + .3
-        arms += (
-            '<g>%s%s%s</g>' % (
-                step_anim("transform", ["0 0", "0 -4", "0 0", "0 0"], .8, "-%ss" % d, kind="animateTransform", typ="translate"),
-                rect(ax, y0 + 8 * p, 2 * p, 3 * p, sh(shirt, .8)),
-                rect(ax, y0 + 11 * p, 2 * p, p, skin),
-            )
-        )
-    return body + arms
+    sleeve = sh(shirt, .85)
+    sx = x0 + (9 if face == "R" else 4) * p
+    sy = y0 + 9 * p
+    hx, hy = hand
+    d = 1 if face == "R" else -1
+    far = _arm(sx - d * 8, sy - 2, hx + d * 10, hy - 5, sh(shirt, .6), skin, ph + .3)
+    # head bobs a little as they read the screen
+    head_rows, body_rows = rows[:7], rows[7:]
+    head = sprite(head_rows, pal, x0, y0, p)
+    body = sprite(body_rows, pal, x0, y0 + 7 * p, p)
+    near = _arm(sx, sy, hx, hy, sleeve, skin, ph)
+    return (
+        far + body
+        + '<g>%s%s</g>' % (step_anim("transform", ["0 0", "0 2", "0 0", "0 0"], 1.6, "-%ss" % ph, kind="animateTransform", typ="translate"), head)
+        + near
+    )
+
+
+def keyflash(kx, ky, ph):
+    out = ""
+    for k in range(4):
+        out += '<rect x="%d" y="%d" width="3" height="3" fill="%s" opacity="0">%s</rect>' % (
+            kx - 12 + k * 7, ky - 2 + (k % 2) * 3, INK, step_anim("opacity", [0, 1, 0, 0], .5 + k * .12, "-%ss" % (ph + k * .17)))
+    return out
 
 
 def chair(ci, cj, back="j", col="#2a1a3a"):
@@ -427,19 +479,20 @@ d3 = desk(.1, 3.5, 1.2, 2.5)
 d3 += box(.3, 4.4, .1, .5, 38, 46, "#1a0a07") + box(.3, 3.85, .16, 1.6, 46, 82, "#1a0a07") + screen(FI(.46), TW * 3.91, TW * 5.39, 49, 79, 4, "scr4", BLUE)
 d3 += box(.75, 4.1, .3, 1.0, 38, 40, "#6b3a30") + mug(.9, 5.55, 38)
 
-c1s, c1b = chair(2.45, 1.95, "j")
-c2s, c2b = chair(4.85, 1.95, "j", "#3a1a14")
-c3s, c3b = chair(1.8, 4.2, "i")
+c1s, c1b = chair(2.45, 1.55, "j")
+c2s, c2b = chair(4.85, 1.55, "j", "#3a1a14")
+c3s, c3b = chair(1.45, 4.2, "i")
 
 
 def seat_anchor(ci, cj):
     return P(ci + .45, cj + .45, 26)
 
 
-a1, a2, a3 = seat_anchor(2.45, 1.95), seat_anchor(4.85, 1.95), seat_anchor(1.8, 4.2)
-p1 = person(a1[0], a1[1], "#2b1a14", "#e0b08c", ACC, "#2a2f4a", 0)
-p2 = person(a2[0], a2[1], "#120706", "#c98f6b", INK, "#3a1a14", .2)
-p3 = person(a3[0], a3[1], "#1a0f0a", "#8d5a3c", BLUE, "#2a2f4a", .4)
+a1, a2, a3 = seat_anchor(2.45, 1.55), seat_anchor(4.85, 1.55), seat_anchor(1.45, 4.2)
+kb1, kb2, kb3 = P(2.9, .9, 40), P(5.5, .95, 40), P(.9, 4.6, 40)
+p1 = person(a1[0], a1[1], "#2b1a14", "#e0b08c", ACC, "#2a2f4a", 0, "R", kb1) + keyflash(kb1[0], kb1[1], 0)
+p2 = person(a2[0], a2[1], "#120706", "#c98f6b", INK, "#3a1a14", .2, "R", kb2) + keyflash(kb2[0], kb2[1], .2)
+p3 = person(a3[0], a3[1], "#1a0f0a", "#8d5a3c", BLUE, "#2a2f4a", .4, "L", kb3) + keyflash(kb3[0], kb3[1], .4)
 
 # --- plant
 pl_i, pl_j = 7.1, .35
