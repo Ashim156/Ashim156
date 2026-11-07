@@ -59,6 +59,14 @@ There is a **Free Forever** plan, no credit card needed.
 
 **[Try MekMitra](https://mekmitra.com/)**
 
+## Contributions
+
+<img src="assets/contributions.svg" alt="Animated 3D skyline of my contributions over the last year, one tower per day" width="100%">
+
+<sub>One tower per day, drawn from my public contribution calendar. Refresh it with <code>python tools/gen_contrib.py Ashim156 assets</code>.</sub>
+
+<img src="assets/divider.svg" alt="" width="100%">
+
 ## Selected work
 
 Most of this is client work, so the code is private. Each one shipped to production.
