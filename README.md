@@ -41,9 +41,9 @@ SaaS built for auto workshops in Nepal.
 
 ## The workspace
 
-<img src="assets/office.svg" alt="An animated office: a small team coding at their desks, a sprint board moving a card to done, commit messages floating above each developer" width="100%">
+<img src="assets/room.svg" alt="A pixel-art isometric workshop: three developers typing at desks, a sprint board, a sleeping cat, an arcade cabinet, and an RPG dialogue box typing out commit messages" width="100%">
 
-<sub>An illustrated team scene. The commit bubbles show the small, reviewed changes I aim for.</sub>
+<sub>A tiny game of my workday: the team ships at their desks, the sprint card walks to DONE, the cat sleeps on the MekMitra rug and the dialogue box types the commits. It is an illustrated scene, not live data.</sub>
 
 <img src="assets/divider.svg" alt="" width="100%">
 
