@@ -451,20 +451,43 @@ plant = (shadow(pl_i, pl_j, .55, .55) + pot
          + sprite(["...a...", "..aba..", ".abbba.", "aabbbaa", ".abcba.", "..bcb..", "...c..."], leaf, px - 28, py - 56, 8)
          + "</g>")
 
-# --- cat sleeping on the rug
+# --- Jiffy the dog, lying on the rug with a wagging tail
 cx_, cy_ = P(6.0, 6.1, 0)
-cat_rows = ["..OO...OO.....", "..OOOOOOOO....", ".OOOOOOOOOOOO.", "OOOOODOODOOOOO", "OOOOOOOOOOOOOO", ".OOOOOOOOOOOO."]
-cat = (
-    '<ellipse cx="%d" cy="%d" rx="30" ry="9" fill="#000" opacity=".3"/>' % (cx_, cy_ + 2)
-    + sprite(cat_rows, {"O": "#e08a4c", "D": "#a85a2c"}, cx_ - 21, cy_ - 17, 3)
-    + '<g>%s%s%s</g>' % (step_anim("transform", ["0 0", "0 -3", "0 0", "0 -3"], 2.4, kind="animateTransform", typ="translate") if False else "", rect(cx_ + 20, cy_ - 8, 12, 3, "#e08a4c"), rect(cx_ + 29, cy_ - 11 , 3, 3, "#e08a4c"))
+dog_rows = ["..DD............", ".DDBBB..........", ".DDBBBB.........", "..BBKBB.........", ".KBBBBBBBB......", "..TWWBBBBBBBBB..", "..WWBBBBBBBBBBB.", ".WWWBBBBBBBBBBBB", ".WWWWBBBBBBBBBB."]
+DOG = {"B": "#d9a066", "D": "#8a5a2c", "W": "#f2d8b0", "K": "#120706", "T": "#e86a7a"}
+dx0, dy0 = cx_ - 24, cy_ - 27
+tail_up = rect(dx0 + 45, dy0 + 9, 6, 3, "#d9a066") + rect(dx0 + 48, dy0 + 3, 3, 6, "#d9a066")
+tail_dn = rect(dx0 + 45, dy0 + 15, 6, 3, "#d9a066") + rect(dx0 + 48, dy0 + 18, 3, 6, "#d9a066")
+dog = (
+    '<ellipse cx="%d" cy="%d" rx="32" ry="9" fill="#000" opacity=".3"/>' % (cx_, cy_ + 2)
+    + sprite(dog_rows, DOG, dx0, dy0, 3)
+    + '<g>%s%s</g>' % (blink(.5, "0s", (1, 0)), tail_up)
+    + '<g>%s%s</g>' % (blink(.5, "0s", (0, 1)), tail_dn)
 )
-for k in range(3):
-    cat += '<g opacity="0">%s%s%s</g>' % (
-        step_anim("opacity", [0, 1, 1, .6, 0], 4.5, "-%ss" % (k * 1.5)),
-        step_anim("transform", ["0 0", "2 -6", "-1 -12", "2 -18", "0 -24"], 4.5, "-%ss" % (k * 1.5), kind="animateTransform", typ="translate"),
-        ptext("Z", cx_ - 4 + k * 5, cy_ - 34 - k * 3, 2 + (k % 2), ACC2),
+# name tag, to the right of the dog so it never covers the rug text
+tw_ = len("JIFFY") * 12 + 12
+tx_, ty_ = cx_ + 46, cy_ - 12
+dog += (
+    '<g>%s%s%s%s%s</g>' % (
+        step_anim("transform", ["0 0", "0 -2"], 1.2, kind="animateTransform", typ="translate"),
+        rect(tx_ - 2, ty_ - 2, tw_ + 4, 22, ACC2),
+        rect(tx_, ty_, tw_, 18, "#120706"),
+        ptext("JIFFY", tx_ + tw_ / 2, ty_ + 2, 2, ACC2, anchor="middle"),
+        poly([(tx_ - 2, ty_ + 5), (tx_ - 2, ty_ + 13), (tx_ - 8, ty_ + 9)], ACC2),
     )
+)
+# an occasional WOOF!
+wx, wy = cx_ - 92, cy_ - 52
+dog += (
+    '<g opacity="0">%s%s%s%s%s</g>' % (
+        step_anim("opacity", [0, 1, 1, 0, 0, 0, 0], 7, "-1s", times=[0, .55, .68, .8, .86, .93, .97]),
+        rect(wx - 2, wy - 2, 74, 22, INK),
+        rect(wx, wy, 70, 18, "#120706"),
+        ptext("WOOF!", wx + 6, wy + 2, 2, INK),
+        poly([(wx + 62, wy + 18), (wx + 70, wy + 18), (wx + 74, wy + 25)], INK),
+    )
+)
+cat = dog
 
 # --- arcade cabinet
 ar_i, ar_j = 6.95, 1.75
@@ -582,7 +605,7 @@ sky = "".join(
 )
 
 # ---------------------------------------------------------------- assemble
-svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" shape-rendering="crispEdges" role="img" aria-label="A pixel-art isometric workshop: three developers typing at desks, a sprint board, a sleeping cat, an arcade cabinet, and an RPG dialogue box typing out commit messages">
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" shape-rendering="crispEdges" role="img" aria-label="A pixel-art isometric workshop: three developers typing at desks, a sprint board, a dog named Jiffy wagging his tail, an arcade cabinet, and an RPG dialogue box typing out commit messages">
 <title>Ashim's pixel workshop</title>
 <defs>{dither}{''.join(clips)}
 <radialGradient id="glow"><stop offset="0" stop-color="{ACC}" stop-opacity=".30"/><stop offset="1" stop-color="{ACC}" stop-opacity="0"/></radialGradient>
