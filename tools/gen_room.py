@@ -452,7 +452,7 @@ plant = (shadow(pl_i, pl_j, .55, .55) + pot
          + "</g>")
 
 # --- cat sleeping on the rug
-cx_, cy_ = P(5.4, 5.7, 0)
+cx_, cy_ = P(6.0, 6.1, 0)
 cat_rows = ["..OO...OO.....", "..OOOOOOOO....", ".OOOOOOOOOOOO.", "OOOOODOODOOOOO", "OOOOOOOOOOOOOO", ".OOOOOOOOOOOO."]
 cat = (
     '<ellipse cx="%d" cy="%d" rx="30" ry="9" fill="#000" opacity=".3"/>' % (cx_, cy_ + 2)
