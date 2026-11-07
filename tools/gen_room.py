@@ -336,15 +336,15 @@ def _cells(x0, y0, x1, y1):
 
 
 def _arm(sx, sy, hx, hy, sleeve, skin, ph):
-    ex, ey = sx + (hx - sx) * .35, sy + 14
+    ex, ey = sx + (hx - sx) * .45, sy + 8
     cells = _cells(sx, sy, ex, ey) + _cells(ex, ey, hx, hy)
     seen, uniq = set(), []
     for c in cells:
         if c not in seen:
             seen.add(c)
             uniq.append(c)
-    arm = "".join(rect(x, y, 5, 5, sleeve) for x, y in uniq[:-2])
-    hand = "".join(rect(x, y, 5, 5, skin) for x, y in uniq[-2:])
+    arm = "".join(rect(x, y, 7, 7, sleeve) for x, y in uniq[:-2])
+    hand = "".join(rect(x, y, 6, 6, skin) for x, y in uniq[-1:])
     return arm + '<g>%s%s</g>' % (step_anim("transform", ["0 0", "0 -3", "0 0", "0 0"], .6, "-%ss" % ph, kind="animateTransform", typ="translate"), hand)
 
 
@@ -358,7 +358,7 @@ def person(cx, by, hair, skin, shirt, pants, ph, face="R", hand=(0, 0)):
     sy = y0 + 9 * p
     hx, hy = hand
     d = 1 if face == "R" else -1
-    far = _arm(sx - d * 8, sy - 2, hx + d * 10, hy - 5, sh(shirt, .6), skin, ph + .3)
+    far = _arm(sx - d * 6, sy - 2, hx + d * 6, hy - 3, sh(shirt, .6), skin, ph + .3)
     # head bobs a little as they read the screen
     head_rows, body_rows = rows[:7], rows[7:]
     head = sprite(head_rows, pal, x0, y0, p)
@@ -468,28 +468,28 @@ shelf = "".join(shelf)
 CH = []   # (seat+post, person, back) in draw order
 d1 = desk(2.0, .1, 1.9, 1.2) + box(2.6, .35, .5, .1, 38, 46, "#1a0a07")
 d1 += box(2.35, .3, 1.2, .16, 46, 82, "#1a0a07") + screen(FJ(.46), TW * 2.41, TW * 3.49, 49, 79, 1, "scr1")
-d1 += box(2.45, .75, .9, .3, 38, 40, "#6b3a30") + mug(3.55, .85, 38)
+d1 += box(2.45, 1.05, .9, .3, 38, 40, "#6b3a30") + mug(3.55, .85, 38)
 
 d2 = desk(4.3, .1, 2.6, 1.3) + box(4.7, .35, .4, .1, 38, 46, "#1a0a07") + box(5.85, .35, .4, .1, 38, 46, "#1a0a07")
 d2 += box(4.4, .3, 1.15, .16, 46, 82, "#1a0a07") + screen(FJ(.46), TW * 4.46, TW * 5.49, 49, 79, 2, "scr2")
 d2 += box(5.65, .3, 1.15, .16, 46, 82, "#1a0a07") + screen(FJ(.46), TW * 5.71, TW * 6.74, 49, 79, 3, "scr3", GREEN)
-d2 += box(5.0, .8, 1.0, .3, 38, 40, "#6b3a30") + mug(6.55, .95, 38)
+d2 += box(5.0, 1.05, 1.0, .3, 38, 40, "#6b3a30") + mug(6.55, .95, 38)
 
 d3 = desk(.1, 3.5, 1.2, 2.5)
 d3 += box(.3, 4.4, .1, .5, 38, 46, "#1a0a07") + box(.3, 3.85, .16, 1.6, 46, 82, "#1a0a07") + screen(FI(.46), TW * 3.91, TW * 5.39, 49, 79, 4, "scr4", BLUE)
-d3 += box(.75, 4.1, .3, 1.0, 38, 40, "#6b3a30") + mug(.9, 5.55, 38)
+d3 += box(1.0, 4.1, .3, 1.0, 38, 40, "#6b3a30") + mug(.9, 5.55, 38)
 
-c1s, c1b = chair(2.45, 1.55, "j")
-c2s, c2b = chair(4.85, 1.55, "j", "#3a1a14")
-c3s, c3b = chair(1.45, 4.2, "i")
+c1s, c1b = chair(2.45, 1.4, "j")
+c2s, c2b = chair(4.85, 1.4, "j", "#3a1a14")
+c3s, c3b = chair(1.35, 4.2, "i")
 
 
 def seat_anchor(ci, cj):
     return P(ci + .45, cj + .45, 26)
 
 
-a1, a2, a3 = seat_anchor(2.45, 1.55), seat_anchor(4.85, 1.55), seat_anchor(1.45, 4.2)
-kb1, kb2, kb3 = P(2.9, .9, 40), P(5.5, .95, 40), P(.9, 4.6, 40)
+a1, a2, a3 = seat_anchor(2.45, 1.4), seat_anchor(4.85, 1.4), seat_anchor(1.35, 4.2)
+kb1, kb2, kb3 = P(2.9, 1.2, 40), P(5.5, 1.2, 40), P(1.15, 4.6, 40)
 p1 = person(a1[0], a1[1], "#2b1a14", "#e0b08c", ACC, "#2a2f4a", 0, "R", kb1) + keyflash(kb1[0], kb1[1], 0)
 p2 = person(a2[0], a2[1], "#120706", "#c98f6b", INK, "#3a1a14", .2, "R", kb2) + keyflash(kb2[0], kb2[1], .2)
 p3 = person(a3[0], a3[1], "#1a0f0a", "#8d5a3c", BLUE, "#2a2f4a", .4, "L", kb3) + keyflash(kb3[0], kb3[1], .4)
