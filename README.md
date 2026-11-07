@@ -39,6 +39,14 @@ SaaS built for auto workshops in Nepal.
 
 <img src="assets/divider.svg" alt="" width="100%">
 
+## The workspace
+
+<img src="assets/office.svg" alt="An animated office: a small team coding at their desks, a sprint board moving a card to done, commit messages floating above each developer" width="100%">
+
+<sub>Every commit message in that office is the kind I actually write: conventional commits, small and reviewed.</sub>
+
+<img src="assets/divider.svg" alt="" width="100%">
+
 ## MekMitra
 
 > Replace paper job cards and Excel sheets in Nepal's auto garages with workshop software built for Nepal:
