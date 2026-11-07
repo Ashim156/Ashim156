@@ -2,6 +2,7 @@
 
 <img src="assets/header.svg" alt="Ashim Nakarmi, Full Stack AI Engineer from Nepal" width="100%">
 
+<a href="https://ashimnakarmi.com.np"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-ashimnakarmi.com.np-e8604f?style=for-the-badge&logo=safari&logoColor=white&labelColor=120706"></a>
 <a href="https://www.linkedin.com/in/ashim-n-878554118/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Ashim_Nakarmi-e8604f?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=120706"></a>
 <a href="https://www.instagram.com/alwaysnotorious_/"><img alt="Instagram" src="https://img.shields.io/badge/Instagram-alwaysnotorious__-e8604f?style=for-the-badge&logo=instagram&logoColor=white&labelColor=120706"></a>
 <a href="mailto:asimnakarmi156@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-asimnakarmi156-e8604f?style=for-the-badge&logo=gmail&logoColor=white&labelColor=120706"></a>
@@ -14,6 +15,8 @@
 <img src="assets/now.svg" alt="Right now: building MekMitra, leading a dev team at Codesc Nepal, exploring AI in products" width="100%">
 
 ## Hi, I'm Ashim
+
+> Portfolio and case studies: **[ashimnakarmi.com.np](https://ashimnakarmi.com.np)**
 
 I take products from idea to production: the interface, the API, the database and, where it makes the software
 genuinely more useful, the AI. I lead a development team at **Codesc Nepal**, and I founded
