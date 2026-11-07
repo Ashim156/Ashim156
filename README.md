@@ -82,15 +82,6 @@ Most of this is client work, so the code is private. Each one shipped to product
 | **Swiss Time Pieces** | Inventory management | React · DRF · PostgreSQL |
 | **Baltra Nepal** | CRM tools | React · Django · MongoDB |
 
-## Public experiments
-
-| Repo | About |
-| :-- | :-- |
-| [`3d_Portfolio`](https://github.com/Ashim156/3d_Portfolio) | A 3D portfolio in JavaScript |
-| [`FlyingBird-three.js`](https://github.com/Ashim156/FlyingBird-three.js) | A flying bird scene with Three.js |
-| [`mern-estate`](https://github.com/Ashim156/mern-estate) | A MERN stack real estate app |
-| [`Cafe`](https://github.com/Ashim156/Cafe) | A Figma design turned into a React site |
-
 <div align="center">
 <img src="assets/footer.svg" alt="Let's build something worth using. asimnakarmi156@gmail.com" width="100%">
 </div>
