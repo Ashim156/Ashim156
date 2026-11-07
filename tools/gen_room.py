@@ -218,8 +218,8 @@ rug = [
 for a in range(0, 14):
     rug.append(rect(3.05 + a * 0.24, 3.35, 0.12, 0.08, ACC, ' opacity=".55"'))
     rug.append(rect(3.05 + a * 0.24, 6.47, 0.12, 0.08, ACC, ' opacity=".55"'))
-rug.append(ptext("MEKMITRA", 3.28, 4.25, 0.062, ACC2))
-rug.append(ptext("GARAGE SOFTWARE", 3.07, 5.0, 0.043, INK, extra='opacity=".8"'))
+rug.append(ptext("MEKMITRA", 3.243, 3.75, 0.062, ACC2))
+rug.append(ptext("GARAGE SOFTWARE", 3.187, 4.5, 0.034, INK, extra='opacity=".8"'))
 rug.append("</g>")
 rug = "".join(rug)
 
