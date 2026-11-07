@@ -44,9 +44,9 @@ SaaS built for auto workshops in Nepal.
 
 ## The workspace
 
-<img src="assets/room.svg" alt="A pixel-art isometric workshop: three developers typing at desks, a sprint board, a sleeping cat, an arcade cabinet, and an RPG dialogue box typing out commit messages" width="100%">
+<img src="assets/room.svg" alt="A pixel-art isometric workshop: three developers typing at desks, a sprint board, a dog named Jiffy wagging his tail, an arcade cabinet, and an RPG dialogue box typing out commit messages" width="100%">
 
-<sub>A tiny game of my workday: the team ships at their desks, the sprint card walks to DONE, the cat sleeps on the MekMitra rug and the dialogue box types the commits. It is an illustrated scene, not live data.</sub>
+<sub>A tiny game of my workday: the team ships at their desks, the sprint card walks to DONE, Jiffy the dog wags his tail on the MekMitra rug and the dialogue box types the commits. It is an illustrated scene, not live data.</sub>
 
 <img src="assets/divider.svg" alt="" width="100%">
 
